@@ -3,7 +3,6 @@ using System.Collections;
 
 public class trigger_test : MonoBehaviour
 {
-    private GameData data;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
