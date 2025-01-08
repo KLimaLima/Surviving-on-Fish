@@ -5,6 +5,13 @@ public class GameData : MonoBehaviour
     public static GameData Instance;
 
     //Add public variable here
+    public int amountFish;
+    public int amountGive = 0;
+
+    void Update()
+    {
+        Debug.Log(amountGive);
+    }
 
     //Add public variable above this comment
 
