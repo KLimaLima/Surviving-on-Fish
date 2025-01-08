@@ -2,23 +2,30 @@ using UnityEngine;
 
 public class cube_move : MonoBehaviour
 {
-    //public static event Move_event;
+    Rigidbody m_Rigidbody;
+    public float m_Speed = 5f;
 
-    // Start is called before the first frame update
+
+    [SerializeField] public Vector3 target;
     void Start()
     {
-
+        //Fetch the Rigidbody from the GameObject with this script attached
+        m_Rigidbody = GetComponent<Rigidbody>();
     }
 
-    // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
-        //if ()
-    }
+        //Store user input as a movement vector
+        //Vector3 m_Input = target;
 
-    public void Move(int movement)
+        //Apply the movement vector to the current position, which is
+        //multiplied by deltaTime and speed for a smooth MovePosition
+        m_Rigidbody.MovePosition(transform.position + target * Time.fixedDeltaTime * m_Speed);
+    }    
+    public void Move(int y_position)
     {
         //Move_event
-        transform.Translate(0, movement * Time.deltaTime, 0);
+        target = new Vector3(0, y_position, 0);
+
     }
 }
