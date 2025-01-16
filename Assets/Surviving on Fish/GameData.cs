@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 public class GameData : MonoBehaviour
@@ -7,6 +8,7 @@ public class GameData : MonoBehaviour
     //Add public variable here
     public int amountFish;
     public int amountGive = 0;
+    public List<GameObject> fishObjects = new List<GameObject>();
 
     void Update()
     {
