@@ -4,13 +4,13 @@ public class cube_move : MonoBehaviour
 {
     Rigidbody m_Rigidbody;
     [SerializeField] public float m_Speed = 5f;
+    private Vector3 moveTowards;
 
-
-    private Vector3 target;
     void Start()
     {
         //Fetch the Rigidbody from the GameObject with this script attached
         m_Rigidbody = GetComponent<Rigidbody>();
+        moveTowards = new Vector3(0, 0, 0);
     }
 
     void FixedUpdate()
@@ -20,12 +20,12 @@ public class cube_move : MonoBehaviour
 
         //Apply the movement vector to the current position, which is
         //multiplied by deltaTime and speed for a smooth MovePosition
-        m_Rigidbody.MovePosition(transform.position + target * Time.fixedDeltaTime * m_Speed);
+        m_Rigidbody.MovePosition(transform.position + moveTowards * Time.fixedDeltaTime * m_Speed);
     }    
     public void Move(int y_position)
     {
         //Move_event
-        target = new Vector3(0, y_position, 0);
+        moveTowards = new Vector3(0, y_position, 0);
 
     }
 }
