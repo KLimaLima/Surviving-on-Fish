@@ -17,5 +17,10 @@ public class random_give_me : MonoBehaviour
     public void Count_Score()
     {
         GameData.Instance.amountGive = 0;
+
+        foreach (var destroyMe in GameData.Instance.fishObjects)
+        {
+            Destroy(destroyMe);
+        }
     }
 }

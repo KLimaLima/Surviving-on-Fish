@@ -1,8 +1,12 @@
 using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 public class trigger_test : MonoBehaviour
 {
+
+    //List<GameObject> fishObjects = new List<GameObject>();
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -20,6 +24,7 @@ public class trigger_test : MonoBehaviour
     {
         Debug.Log("A collider has entered the DoorObject trigger");
         GameData.Instance.amountGive += 1;
+        GameData.Instance.fishObjects.Add(other.gameObject);
     }
 
     void OnTriggerStay(Collider other)
@@ -30,6 +35,7 @@ public class trigger_test : MonoBehaviour
     void OnTriggerExit(Collider other)
     {
         GameData.Instance.amountGive -= 1;
+        GameData.Instance.fishObjects.Remove(other.gameObject);
         // Debug.Log(GameData.Instance.amountGive);
     }
 }
