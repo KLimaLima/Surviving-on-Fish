@@ -3,10 +3,10 @@ using UnityEngine;
 public class cube_move : MonoBehaviour
 {
     Rigidbody m_Rigidbody;
-    public float m_Speed = 5f;
+    [SerializeField] public float m_Speed = 5f;
 
 
-    [SerializeField] public Vector3 target;
+    private Vector3 target;
     void Start()
     {
         //Fetch the Rigidbody from the GameObject with this script attached
