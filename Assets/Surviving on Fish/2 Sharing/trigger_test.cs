@@ -6,14 +6,15 @@ public class trigger_test : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        //data = GameData.Instance;
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        //Debug.Log(data.amountGive.ToString());
+        //Debug.Log(GameData.Instance.amountGive);
     }
+
     // “other” refers to the collider on the GameObject inside this trigger
     void OnTriggerEnter(Collider other)
     {
