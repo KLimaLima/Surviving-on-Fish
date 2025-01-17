@@ -12,6 +12,7 @@ public class GameData : MonoBehaviour
     public List<GameObject> fishToGiveObjects = new List<GameObject>();
 
     public int score = 0;
+    public int amountFishNeed;
 
     void Update()
     {

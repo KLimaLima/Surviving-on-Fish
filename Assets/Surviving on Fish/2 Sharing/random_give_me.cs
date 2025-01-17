@@ -2,7 +2,6 @@ using UnityEngine;
 
 public class random_give_me : MonoBehaviour
 {
-    private int amountFishNeed;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -19,7 +18,7 @@ public class random_give_me : MonoBehaviour
     private int baseReward = 11;
     public void Count_Score()
     {
-        int givenDiff = Mathf.Abs(GameData.Instance.amountGive - amountFishNeed);
+        int givenDiff = Mathf.Abs(GameData.Instance.amountGive - GameData.Instance.amountFishNeed);
 
         float penaltyScore = Mathf.Pow(penaltyFactor, givenDiff);
 
@@ -33,10 +32,12 @@ public class random_give_me : MonoBehaviour
         {
             Destroy(destroyMe);
         }
+
+        NewCustomer();
     }
 
     private void NewCustomer()
     {
-        amountFishNeed = Random.Range(1, 8);
+        GameData.Instance.amountFishNeed = Random.Range(1, 8);
     }
 }
