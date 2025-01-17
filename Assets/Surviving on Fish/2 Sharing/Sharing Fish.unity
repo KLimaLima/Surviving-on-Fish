@@ -880,7 +880,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Speed: 5
-  target: {x: 0, y: 0, z: 0}
 --- !u!54 &483270591
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1550,6 +1549,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d49ba5daaebe68f4cb841466fe4fa8d1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  whatVar: 1
 --- !u!54 &1841127286
 Rigidbody:
   m_ObjectHideFlags: 0

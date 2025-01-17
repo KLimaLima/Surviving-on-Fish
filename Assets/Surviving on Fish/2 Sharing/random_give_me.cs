@@ -18,7 +18,7 @@ public class random_give_me : MonoBehaviour
     {
         GameData.Instance.amountGive = 0;
 
-        foreach (var destroyMe in GameData.Instance.fishObjects)
+        foreach (var destroyMe in GameData.Instance.fishToGiveObjects)
         {
             Destroy(destroyMe);
         }
