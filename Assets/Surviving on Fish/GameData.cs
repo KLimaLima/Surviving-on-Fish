@@ -6,7 +6,7 @@ public class GameData : MonoBehaviour
     public static GameData Instance;
 
     //Add public variable here
-    public int amountFish;
+    public int amountFish = 0;
     public int amountGive = 0;
     public List<GameObject> fishObjects = new List<GameObject>();
 
