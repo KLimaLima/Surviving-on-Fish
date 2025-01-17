@@ -1149,7 +1149,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   amountFish: 0
   amountGive: 0
-  fishObjects: []
+  fishCaughtObjects: []
+  fishToGiveObjects: []
+  score: 0
 --- !u!4 &991511756
 Transform:
   m_ObjectHideFlags: 0
@@ -1419,14 +1421,14 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1774872454}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: -3.229, y: 0.1, z: 2.87}
+  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
+  m_LocalPosition: {x: 4.133, y: 0.1, z: -1.345}
   m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 511469308}
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!1 &1841127278
 GameObject:
   m_ObjectHideFlags: 0
