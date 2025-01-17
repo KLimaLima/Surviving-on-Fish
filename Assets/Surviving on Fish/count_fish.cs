@@ -38,10 +38,12 @@ public class count_fish : MonoBehaviour
         {
             case WhatVar.amountFish:
                 GameData.Instance.amountFish += 1;
+                GameData.Instance.fishCaughtObjects.Add(other.gameObject);
                 break;
 
             case WhatVar.amountGive:
                 GameData.Instance.amountGive += 1;
+                GameData.Instance.fishToGiveObjects.Add(other.gameObject);
                 break;
 
             default:
@@ -49,7 +51,6 @@ public class count_fish : MonoBehaviour
                 break;
         }
         //GameData.Instance.amountGive += 1;
-        GameData.Instance.fishObjects.Add(other.gameObject);
     }
 
     void OnTriggerStay(Collider other)
@@ -66,10 +67,12 @@ public class count_fish : MonoBehaviour
         {
             case WhatVar.amountFish:
                 GameData.Instance.amountFish -= 1;
+                GameData.Instance.fishCaughtObjects.Remove(other.gameObject);
                 break;
 
             case WhatVar.amountGive:
                 GameData.Instance.amountGive -= 1;
+                GameData.Instance.fishToGiveObjects.Remove(other.gameObject);
                 break;
 
             default:
@@ -77,7 +80,6 @@ public class count_fish : MonoBehaviour
                 break;
         }
         //GameData.Instance.amountGive -= 1;
-        GameData.Instance.fishObjects.Remove(other.gameObject);
         // Debug.Log(GameData.Instance.amountGive);
     }
 }

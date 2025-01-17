@@ -8,7 +8,8 @@ public class GameData : MonoBehaviour
     //Add public variable here
     public int amountFish = 0;
     public int amountGive = 0;
-    public List<GameObject> fishObjects = new List<GameObject>();
+    public List<GameObject> fishCaughtObjects = new List<GameObject>();
+    public List<GameObject> fishToGiveObjects = new List<GameObject>();
 
     void Update()
     {
