@@ -1,7 +1,15 @@
+using System;
 using UnityEngine;
 
 public class count_fish : MonoBehaviour
 {
+    private enum WhatVar
+    {
+        amountFish,
+        amountGive
+    }
+
+    [SerializeField] private WhatVar whatVar;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -12,6 +20,9 @@ public class count_fish : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        Debug.Log("amountFish");
+        Debug.Log(GameData.Instance.amountFish);
+        Debug.Log("amountGive");
         Debug.Log(GameData.Instance.amountGive);
     }
 
@@ -23,7 +34,21 @@ public class count_fish : MonoBehaviour
         // If not fish tag then finish
         if (other.tag != "Fish") { return; }
 
-        GameData.Instance.amountGive += 1;
+        switch (whatVar)
+        {
+            case WhatVar.amountFish:
+                GameData.Instance.amountFish += 1;
+                break;
+
+            case WhatVar.amountGive:
+                GameData.Instance.amountGive += 1;
+                break;
+
+            default:
+                Debug.Log("Error: No variable in GameData chosen");
+                break;
+        }
+        //GameData.Instance.amountGive += 1;
         GameData.Instance.fishObjects.Add(other.gameObject);
     }
 
@@ -37,7 +62,21 @@ public class count_fish : MonoBehaviour
         // If not fish tag then finish
         if (other.tag != "Fish") { return; }
 
-        GameData.Instance.amountGive -= 1;
+        switch (whatVar)
+        {
+            case WhatVar.amountFish:
+                GameData.Instance.amountFish -= 1;
+                break;
+
+            case WhatVar.amountGive:
+                GameData.Instance.amountGive -= 1;
+                break;
+
+            default:
+                Debug.Log("Error: No variable in GameData chosen");
+                break;
+        }
+        //GameData.Instance.amountGive -= 1;
         GameData.Instance.fishObjects.Remove(other.gameObject);
         // Debug.Log(GameData.Instance.amountGive);
     }
