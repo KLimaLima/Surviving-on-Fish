@@ -19,7 +19,7 @@ public class collect_fish : MonoBehaviour
 
     }
 
-    // ìotherî refers to the collider on the GameObject inside this trigger
+    // ìotherÅErefers to the collider on the GameObject inside this trigger
     void OnTriggerEnter(Collider other)
     {
         //Debug.Log("A collider has entered the DoorObject trigger");
