@@ -42,7 +42,7 @@ public class DummyNPC : MonoBehaviour
     }
 
     // NPC ‚Ìí—Ş‚É‰‚¶‚Ä 3D ƒ‚ƒfƒ‹‚ğ¶¬
-    private void SpawnModel()
+    public void  SpawnModel()
     {
         // Šù‘¶ƒ‚ƒfƒ‹‚ª‚ ‚éê‡‚Ííœ
         if (currentModel != null)
