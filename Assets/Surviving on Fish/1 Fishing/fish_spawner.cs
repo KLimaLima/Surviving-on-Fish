@@ -39,7 +39,7 @@ public class fish_spawner : MonoBehaviour
 
     }
 
-    // ìotherî refers to the collider on the GameObject inside this trigger
+    // ìotherÅErefers to the collider on the GameObject inside this trigger
     void OnTriggerEnter(Collider other)
     {
         canSpawn = true;

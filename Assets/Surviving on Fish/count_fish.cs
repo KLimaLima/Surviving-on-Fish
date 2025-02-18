@@ -26,7 +26,7 @@ public class count_fish : MonoBehaviour
         Debug.Log(GameData.Instance.amountGive);
     }
 
-    // ìotherî refers to the collider on the GameObject inside this trigger
+    // ìotherÅErefers to the collider on the GameObject inside this trigger
     void OnTriggerEnter(Collider other)
     {
         //Debug.Log("A collider has entered the DoorObject trigger");
