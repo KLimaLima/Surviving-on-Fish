@@ -28,22 +28,22 @@ public class DummyNPC : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        // Enum の全要素を取得
-        NPCType[] npcTypes = (NPCType[])System.Enum.GetValues(typeof(NPCType));
-
-        // ランダムに NPC の種類を決定
-        npcType = npcTypes[Random.Range(0, npcTypes.Length)];
-
-        // 決定した種類を表示
-        Debug.Log("This NPC is a: " + npcType.ToString());
-
-        // NPC の種類に応じて 3D モデルを生成
+      　// NPC の種類に応じて 3D モデルを生成
         SpawnModel();
     }
 
     // NPC の種類に応じて 3D モデルを生成
     public void  SpawnModel()
     {
+        // Enum の全要素を取得
+        NPCType[] npcTypes = (NPCType[])System.Enum.GetValues(typeof(NPCType));
+        
+        // ランダムに NPC の種類を決定
+        npcType = npcTypes[Random.Range(0, npcTypes.Length)];
+        
+        // 決定した種類を表示
+        Debug.Log("This NPC is a: " + npcType.ToString());
+        
         // 既存モデルがある場合は削除
         if (currentModel != null)
         {
