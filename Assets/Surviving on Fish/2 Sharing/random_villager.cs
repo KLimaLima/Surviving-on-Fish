@@ -28,7 +28,7 @@ public class DummyNPC : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-      @// NPC ‚Ìí—Ş‚É‰‚¶‚Ä 3D ƒ‚ƒfƒ‹‚ğ¶¬
+        // NPC ‚Ìí—Ş‚É‰‚¶‚Ä 3D ƒ‚ƒfƒ‹‚ğ¶¬
         SpawnModel();
     }
 
