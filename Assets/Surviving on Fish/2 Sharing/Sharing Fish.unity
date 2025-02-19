@@ -227,6 +227,52 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &33353419
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 33353421}
+  - component: {fileID: 33353420}
+  m_Layer: 0
+  m_Name: CaughtFishSpawner
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &33353420
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 33353419}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5ba4e65c2f826e34e898185418230d54, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  DummyFishPrefab: {fileID: 7135052400904946514, guid: 2127c3852416646489a81e4dabed312b, type: 3}
+  FishSpawnArea: {fileID: 2132763442}
+--- !u!4 &33353421
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 33353419}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 4.432227, y: 0.4632604, z: -1.6989822}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &174758252
 GameObject:
   m_ObjectHideFlags: 0
@@ -1117,6 +1163,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Speed: 5
+  upperLimit: 1.5
+  lowerLimit: -5
 --- !u!54 &483270591
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -2746,3 +2794,4 @@ SceneRoots:
   - {fileID: 1675415189}
   - {fileID: 446164118}
   - {fileID: 1815877920}
+  - {fileID: 33353421}
