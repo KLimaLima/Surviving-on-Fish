@@ -152,7 +152,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bba454be44813f549a663d1cbd666a13, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fishPrefab: {fileID: 7135052400904946514, guid: 2127c3852416646489a81e4dabed312b, type: 3}
+  fishPrefab: {fileID: 4518378412248730217, guid: e2fa5d6fff4e64b4eb11bacb86196fd3, type: 3}
   maxTime: 7
   rarity: 5
 --- !u!65 &1087826
@@ -262,6 +262,77 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 4922582553321831162, guid: 76f3439a0ae796e4b81bee3f91f888ee, type: 3}
   m_PrefabInstance: {fileID: 507253667}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &132982773
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 100002, guid: fbb1810807a93534fbd814fb6b0aa55f, type: 3}
+      propertyPath: m_Name
+      value: fishing_boat
+      objectReference: {fileID: 0}
+    - target: {fileID: 400002, guid: fbb1810807a93534fbd814fb6b0aa55f, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -3.953
+      objectReference: {fileID: 0}
+    - target: {fileID: 400002, guid: fbb1810807a93534fbd814fb6b0aa55f, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.098
+      objectReference: {fileID: 0}
+    - target: {fileID: 400002, guid: fbb1810807a93534fbd814fb6b0aa55f, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 2.508
+      objectReference: {fileID: 0}
+    - target: {fileID: 400002, guid: fbb1810807a93534fbd814fb6b0aa55f, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 400002, guid: fbb1810807a93534fbd814fb6b0aa55f, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400002, guid: fbb1810807a93534fbd814fb6b0aa55f, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 400002, guid: fbb1810807a93534fbd814fb6b0aa55f, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400002, guid: fbb1810807a93534fbd814fb6b0aa55f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400002, guid: fbb1810807a93534fbd814fb6b0aa55f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 400002, guid: fbb1810807a93534fbd814fb6b0aa55f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2300002, guid: fbb1810807a93534fbd814fb6b0aa55f, type: 3}
+      propertyPath: m_Materials.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2300002, guid: fbb1810807a93534fbd814fb6b0aa55f, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 404d39e426dcbb343a393c79b723d9ce, type: 2}
+    - target: {fileID: 2300002, guid: fbb1810807a93534fbd814fb6b0aa55f, type: 3}
+      propertyPath: 'm_Materials.Array.data[1]'
+      value: 
+      objectReference: {fileID: 2100000, guid: af3dab0ca502e014893047f7e80b814a, type: 2}
+    m_RemovedComponents: []
+    m_RemovedGameObjects:
+    - {fileID: 100006, guid: fbb1810807a93534fbd814fb6b0aa55f, type: 3}
+    - {fileID: 100000, guid: fbb1810807a93534fbd814fb6b0aa55f, type: 3}
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: fbb1810807a93534fbd814fb6b0aa55f, type: 3}
 --- !u!1001 &182501628
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -863,7 +934,7 @@ GameObject:
   - component: {fileID: 483270590}
   - component: {fileID: 483270591}
   m_Layer: 0
-  m_Name: DummyFishnet
+  m_Name: Fishnet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -971,6 +1042,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Speed: 5
+  upperLimit: 1.5
+  lowerLimit: -5
 --- !u!54 &483270591
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1722,7 +1795,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bba454be44813f549a663d1cbd666a13, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fishPrefab: {fileID: 7135052400904946514, guid: 2127c3852416646489a81e4dabed312b, type: 3}
+  fishPrefab: {fileID: 4518378412248730217, guid: e2fa5d6fff4e64b4eb11bacb86196fd3, type: 3}
   maxTime: 7
   rarity: 5
 --- !u!1001 &1260033687
@@ -2519,3 +2592,4 @@ SceneRoots:
   - {fileID: 1087829}
   - {fileID: 1670003281}
   - {fileID: 507253667}
+  - {fileID: 132982773}
