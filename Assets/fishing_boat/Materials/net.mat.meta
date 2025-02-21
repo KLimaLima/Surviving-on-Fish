@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 4fd1a8dcfd3c4d44eb0a90f138ef092c
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 23181
+  packageName: Fishing Boat
+  packageVersion: 1
+  assetPath: Assets/fishing_boat/Materials/net.mat
+  uploadId: 24365
