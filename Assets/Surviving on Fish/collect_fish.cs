@@ -27,12 +27,29 @@ public class collect_fish : MonoBehaviour
         // If not fish tag then finish
         if (other.tag != "Fish") { return; }
 
-        Vector3 randomPosition = new Vector3(Random.Range(areaToSpawn.bounds.min.x, areaToSpawn.bounds.max.x), (areaToSpawn.bounds.max.y + 0.1f), Random.Range(areaToSpawn.bounds.min.z, areaToSpawn.bounds.max.z));
+        Vector3 randomPosition = new Vector3(Random.Range(areaToSpawn.bounds.min.x, areaToSpawn.bounds.max.x),
+                                            (areaToSpawn.bounds.max.y + 0.1f),
+                                             Random.Range(areaToSpawn.bounds.min.z, areaToSpawn.bounds.max.z)
+                                             );
 
         // gets the rigidbody of other aka gameobject and teleports it to randomPostion
         other.GetComponent<Rigidbody>().position = randomPosition;
 
         //GameData.Instance.amountGive += 1;
         //GameData.Instance.fishObjects.Add(other.gameObject);
+
+        if (whereToSpawn == null || areaToSpawn == null)
+        {
+            Debug.LogError("whereToSpawn or its Collider is not assigned!");
+            return;
+        }
+
+        Rigidbody fishRigidbody = other.GetComponent<Rigidbody>();
+        if (fishRigidbody == null)
+        {
+            Debug.LogError("Fish does not have a Rigidbody component!");
+            return;
+        }
     }
+
 }
