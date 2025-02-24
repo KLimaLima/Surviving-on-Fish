@@ -1253,10 +1253,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fdd9d4f93f2d5094a9e75aca1b82d220, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  malePrefab: {fileID: 1603031705475341831, guid: 721475908d68db14fafdd1f74770bfae, type: 3}
-  femalePrefab: {fileID: 8738454665538047198, guid: 3c449de48ebc93745b636af6df513786, type: 3}
-  childmalePrefab: {fileID: 8066444908483662611, guid: e6ae757f9708d5540aaf267a1adc5cf1, type: 3}
-  childfemalePrefab: {fileID: 1128258070442340847, guid: bd902882885cfc644aa49778515f2457, type: 3}
+  malePrefab: {fileID: 7929040612236764608, guid: fcec08e1e6864074c83907d4b5594a60, type: 3}
+  femalePrefab: {fileID: 1787195187322207081, guid: 8ea6313e9b60f87468e60da4fdd781c6, type: 3}
+  childmalePrefab: {fileID: 8059464406506282683, guid: 154495f7c61cd5940a0baa92f45044ac, type: 3}
+  childfemalePrefab: {fileID: 3287999801951082697, guid: 6080d944ddba26945a2a02208376b29a, type: 3}
 --- !u!114 &572124427
 MonoBehaviour:
   m_ObjectHideFlags: 0
