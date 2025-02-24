@@ -5,8 +5,8 @@ public class NewMonoBehaviourScript : MonoBehaviour
 {
     public class ExampleScript : MonoBehaviour
     {
-        public int score, happiness, NPCwants, AmountGive, timesUnbalance;
-        public float last_score;
+        public int score_progress, happiness, NPCwants, AmountGive, timesUnbalance;
+        public float last_score,new_happiness;
         //public int happiness;
         //public int NPCwants;
         //public int AmountGive;
@@ -19,7 +19,7 @@ public class NewMonoBehaviourScript : MonoBehaviour
                 if (AmountGive > NPCwants)
                 {
 
-                score = score + (NPCwants * 100);
+                score_progress = score_progress + (NPCwants * 100);
                 happiness += 5;
                     timesUnbalance++;
                 }
@@ -28,7 +28,7 @@ public class NewMonoBehaviourScript : MonoBehaviour
                 {
 
                 int happinessdiff = NPCwants - AmountGive;
-                    score = score + ((AmountGive - (happinessdiff)) *100);
+                score_progress = score_progress + ((AmountGive - (happinessdiff)) *100);
                      happiness = 5 * happinessdiff;
                      timesUnbalance++;
                 }
@@ -37,7 +37,7 @@ public class NewMonoBehaviourScript : MonoBehaviour
                 {
 
                 //new = old
-                score = score + ((AmountGive * 100) * 2);
+                score_progress = score_progress + ((AmountGive * 100) * 2);
                 happiness += 10;
 
                 }
@@ -51,7 +51,10 @@ public class NewMonoBehaviourScript : MonoBehaviour
 
             //}
 
-            last_score = score;
+            last_score = score_progress;
+            new_happiness = happiness;
+            last_score = GameData.Instance.last_score;
+            new_happiness = GameData.Instance.new_happiness;
         }
 
 
