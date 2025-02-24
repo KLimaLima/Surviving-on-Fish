@@ -1999,8 +1999,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Speed: 2
-  upperLimit: 0.5
-  lowerLimit: -5
+  WhereToStop: {fileID: 1994923763}
 --- !u!54 &1606943511
 Rigidbody:
   m_ObjectHideFlags: 0
