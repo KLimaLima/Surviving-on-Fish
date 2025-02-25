@@ -16,9 +16,11 @@ public class GameData : MonoBehaviour
     public int last_score = 0;
     public int new_happiness = 50;
 
+    private float timePassed = 0;
+
     void Update()
     {
-        Debug.Log(last_score);
+        /*Debug.Log(last_score);*/
     }
 
     //Add public variable above this comment
