@@ -37,21 +37,22 @@ public class fish_spawner : MonoBehaviour
         Instantiate(fishPrefab, randomPosition, Quaternion.identity);
         totalSeconds = 0;
 
+        canSpawn = false;
     }
 
     // ìotherÅErefers to the collider on the GameObject inside this trigger
     void OnTriggerEnter(Collider other)
     {
-        canSpawn = true;
+        /*canSpawn = true;*/
     }
 
     void OnTriggerStay(Collider other)
     {
-
+        canSpawn = true;
     }
 
     void OnTriggerExit(Collider other)
     {
-        canSpawn = false;
+        /*canSpawn = false;*/
     }
 }
