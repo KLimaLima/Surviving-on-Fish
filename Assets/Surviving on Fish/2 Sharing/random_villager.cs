@@ -5,22 +5,22 @@ public class DummyNPC : MonoBehaviour
     // NPC の種類を定義
     private enum NPCType
     {
-        Family,
-        Child,
-        Elderly,
-        Housewife
+        Male,
+        Female,
+        ChildMale,
+        ChildFemale
     }
 
     // 現在の NPC の種類を保持
     private NPCType npcType;
 
     // 各 NPC に対応する 3D モデルのプレハブ
-    [SerializeField] private GameObject familyPrefab;
-    [SerializeField] private GameObject childPrefab;
-    [SerializeField] private GameObject elderlyPrefab;
-    [SerializeField] private GameObject housewifePrefab;
-    [SerializeField] private GameObject workerPrefab;
-    [SerializeField] private GameObject studentPrefab;
+    [SerializeField] private GameObject malePrefab;
+    [SerializeField] private GameObject femalePrefab;
+    [SerializeField] private GameObject childmalePrefab;
+    [SerializeField] private GameObject childfemalePrefab;
+    //[SerializeField] private GameObject workerPrefab;
+    //[SerializeField] private GameObject studentPrefab;
 
     // インスタンス化された 3D モデルの保持用
     private GameObject currentModel;
@@ -53,17 +53,17 @@ public class DummyNPC : MonoBehaviour
         // 適切なプレハブを選択してインスタンス化
         switch (npcType)
         {
-            case NPCType.Family:
-                currentModel = Instantiate(familyPrefab, transform.position, transform.rotation, transform);
+            case NPCType.Male:
+                currentModel = Instantiate(malePrefab, transform.position, transform.rotation, transform);
                 break;
-            case NPCType.Child:
-                currentModel = Instantiate(childPrefab, transform.position, transform.rotation, transform);
+            case NPCType.Female:
+                currentModel = Instantiate(femalePrefab, transform.position, transform.rotation, transform);
                 break;
-            case NPCType.Elderly:
-                currentModel = Instantiate(elderlyPrefab, transform.position, transform.rotation, transform);
+            case NPCType.ChildMale:
+                currentModel = Instantiate(childmalePrefab, transform.position, transform.rotation, transform);
                 break;
-            case NPCType.Housewife:
-                currentModel = Instantiate(housewifePrefab, transform.position, transform.rotation, transform);
+            case NPCType.ChildFemale:
+                currentModel = Instantiate(childfemalePrefab, transform.position, transform.rotation, transform);
                 break;
             default:
                 Debug.LogError("Invalid NPC Type");
