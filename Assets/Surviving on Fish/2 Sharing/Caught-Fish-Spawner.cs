@@ -4,24 +4,30 @@ using UnityEngine;
 public class CaughtFishSpawner : MonoBehaviour
 {
     [SerializeField] private GameObject dummyFishPrefab;
-    [SerializeField] private Transform fishSpawnArea;
+    [SerializeField] private GameObject fishSpawnArea;
 
     private List<GameObject> spawnedDummyFish = new List<GameObject>();
     private int previousAmountFish;
+    private Collider areaToSpawn;
+    private float timePassed;
 
     void Start()
     {
         previousAmountFish = GameData.Instance.amountFish;
         UpdateDummyFish();
+        timePassed = 0;
     }
 
     void Update()
     {
+        timePassed += Time.deltaTime;
         // amountFish の値が変わった場合にのみ更新
-        if (GameData.Instance.amountFish != previousAmountFish)
+        if (timePassed > 10 && GameData.Instance.amountFish != previousAmountFish)
         {
             UpdateDummyFish();
             previousAmountFish = GameData.Instance.amountFish;
+
+            timePassed = 0;
         }
     }
 
@@ -36,7 +42,7 @@ public class CaughtFishSpawner : MonoBehaviour
             int fishToSpawn = currentAmountFish - spawnedDummyFish.Count;
             for (int i = 0; i < fishToSpawn; i++)
             {
-                GameObject newFish = Instantiate(dummyFishPrefab, GetRandomPosition(), Quaternion.identity, fishSpawnArea);
+                GameObject newFish = Instantiate(dummyFishPrefab, GetRandomPosition(), Quaternion.identity);
                 spawnedDummyFish.Add(newFish);
             }
         }
@@ -53,8 +59,19 @@ public class CaughtFishSpawner : MonoBehaviour
         }
     }
 
-    // スポーンエリア内のランダムな位置を取得
     private Vector3 GetRandomPosition()
+    {
+        areaToSpawn = fishSpawnArea.GetComponent<Collider>();
+        Vector3 randomPosition = new Vector3(Random.Range(areaToSpawn.bounds.min.x, areaToSpawn.bounds.max.x),
+                                    (areaToSpawn.bounds.max.y + 0.1f),
+                                     Random.Range(areaToSpawn.bounds.min.z, areaToSpawn.bounds.max.z)
+                                     );
+
+        return randomPosition;
+    }
+
+    // スポーンエリア内のランダムな位置を取得
+/*    private Vector3 GetRandomPosition()
     {
         Vector3 areaSize = fishSpawnArea.localScale;
         Vector3 areaPosition = fishSpawnArea.position;
@@ -64,5 +81,5 @@ public class CaughtFishSpawner : MonoBehaviour
         float randomZ = Random.Range(areaPosition.z - areaSize.z / 2, areaPosition.z + areaSize.z / 2);
 
         return new Vector3(randomX, randomY, randomZ);
-    }
+    }*/
 }
