@@ -22,7 +22,7 @@ public class display_score : MonoBehaviour
     {
         string scoreText = GameData.Instance.score.ToString();
         string fishNeedText = GameData.Instance.amountFishNeed.ToString();
-        string textUI = $"How much this person needs: {fishNeedText}\nScore: {scoreText}";
+        string textUI = $"How much this person needs: {fishNeedText}";
         scoreUI.text = textUI;
     }
 }

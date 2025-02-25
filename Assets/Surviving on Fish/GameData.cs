@@ -12,11 +12,13 @@ public class GameData : MonoBehaviour
     public List<GameObject> fishToGiveObjects = new List<GameObject>();
 
     public int score = 0;
-    public int amountFishNeed;
+    public int amountFishNeed = 0;
+    public int last_score = 0;
+    public int new_happiness = 0;
 
     void Update()
     {
-        Debug.Log(amountGive);
+        Debug.Log(last_score);
     }
 
     //Add public variable above this comment

@@ -12,7 +12,7 @@ public class HappinessBar : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-
+        current = 50;
     }
 
     // Update is called once per frame
@@ -22,6 +22,7 @@ public class HappinessBar : MonoBehaviour
     }
     void GetCurrentFill()
     {
+        current = GameData.Instance.new_happiness;
         float currentOffset = current - minimum;
         float maximumOffset = maximum - minimum;
         float fillAmount = currentOffset / maximumOffset;
