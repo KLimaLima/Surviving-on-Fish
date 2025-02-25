@@ -13,7 +13,7 @@ public class GameData : MonoBehaviour
 
     public int score = 0;
     public int amountFishNeed;
-    public int last_score = 1;
+    public int last_score = 0;
     public int new_happiness = 0;
 
     void Update()

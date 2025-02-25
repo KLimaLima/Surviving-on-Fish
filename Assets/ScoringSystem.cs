@@ -6,38 +6,40 @@ public class NewMonoBehaviourScript : MonoBehaviour
     public class ExampleScript : MonoBehaviour
     {
         public int score_progress, happiness, NPCwants, AmountGive, timesUnbalance;
-        public float last_score,new_happiness;
+        public int final_score,new_happiness;
         //public int happiness;
         //public int NPCwants;
         //public int AmountGive;
 
-        void Start()
+        public void Socresystem()
+
         {
+            score_progress = 0;
             //while (go_to_fishing != true)
             //{ newCustmer;
 
-                if (AmountGive > NPCwants)
+            if (GameData.Instance.amountGive > GameData.Instance.amountFishNeed)
                 {
 
-                score_progress = score_progress + (NPCwants * 100);
+                score_progress = score_progress + (GameData.Instance.amountFishNeed * 100);
                 happiness += 5;
                     timesUnbalance++;
                 }
 
-                else if (AmountGive < NPCwants)
+                else if (GameData.Instance.amountFish < GameData.Instance.amountFishNeed)
                 {
 
-                int happinessdiff = NPCwants - AmountGive;
-                score_progress = score_progress + ((AmountGive - (happinessdiff)) *100);
+                int happinessdiff = GameData.Instance.amountFishNeed - GameData.Instance.amountGive;
+                score_progress = score_progress + ((GameData.Instance.amountGive - (happinessdiff)) *100);
                      happiness = 5 * happinessdiff;
                      timesUnbalance++;
                 }
 
-                else if (AmountGive == NPCwants)
+                else if (GameData.Instance.amountFish == GameData.Instance.amountFishNeed)
                 {
 
-                //new = old
-                score_progress = score_progress + ((AmountGive * 100) * 2);
+                // new         =          old
+                score_progress = score_progress + ((GameData.Instance.amountGive * 100) * 2);
                 happiness += 10;
 
                 }
@@ -51,10 +53,10 @@ public class NewMonoBehaviourScript : MonoBehaviour
 
             //}
 
-            last_score = score_progress;
+            final_score = score_progress;
             new_happiness = happiness;
-            last_score = GameData.Instance.last_score;
-            new_happiness = GameData.Instance.new_happiness;
+            GameData.Instance.last_score = final_score;
+            GameData.Instance.new_happiness = new_happiness;
         }
 
 
