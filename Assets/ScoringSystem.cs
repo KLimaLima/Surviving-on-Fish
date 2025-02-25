@@ -32,7 +32,7 @@ public class ScoringSystem : MonoBehaviour
 
                 int happinessdiff = GameData.Instance.amountFishNeed - GameData.Instance.amountGive;
                 score_progress = score_progress + ((GameData.Instance.amountGive - (happinessdiff)) * 100);
-                happiness = 5 * happinessdiff;
+                happiness -= 5 * happinessdiff;
                 timesUnbalance++;
             }
 

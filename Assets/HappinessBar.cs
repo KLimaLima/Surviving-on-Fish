@@ -22,6 +22,7 @@ public class HappinessBar : MonoBehaviour
     }
     void GetCurrentFill()
     {
+        current = GameData.Instance.new_happiness;
         float currentOffset = current - minimum;
         float maximumOffset = maximum - minimum;
         float fillAmount = currentOffset / maximumOffset;
