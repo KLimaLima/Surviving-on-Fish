@@ -7,14 +7,24 @@ public class cube_move : MonoBehaviour
     private Vector3 moveTowards;
 
     // Add variables for upper and lower limits
-    [SerializeField] public float upperLimit = 1.5f; // Set your upper limit here
-    [SerializeField] public float lowerLimit = -5f; // Set your lower limit here
+    /*    [SerializeField] public float upperLimit = 1.5f; // Set your upper limit here
+        [SerializeField] public float lowerLimit = -5f; // Set your lower limit here*/
+
+    private float upperLimit = 1.5f;
+    private float lowerLimit;
+    [SerializeField] private GameObject WhereToStop; //The place to stop at
+
+    private Collider areaToSpawn;
 
     void Start()
     {
         // Fetch the Rigidbody from the GameObject with this script attached
         m_Rigidbody = GetComponent<Rigidbody>();
         moveTowards = new Vector3(0, 0, 0);
+
+        areaToSpawn = WhereToStop.GetComponent<Collider>();
+        lowerLimit = areaToSpawn.bounds.min.y;
+
     }
 
     void FixedUpdate()
