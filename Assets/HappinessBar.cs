@@ -12,7 +12,7 @@ public class HappinessBar : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        current = 50;
+
     }
 
     // Update is called once per frame

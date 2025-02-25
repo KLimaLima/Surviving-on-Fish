@@ -17,6 +17,8 @@ public class ScoringSystem : MonoBehaviour
     public void CalculateScore()
 
         {
+            happiness = 50;
+
             //player give too much fish
             if (GameData.Instance.amountGive > GameData.Instance.amountFishNeed)
 
