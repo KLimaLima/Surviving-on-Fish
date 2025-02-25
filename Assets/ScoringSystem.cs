@@ -53,17 +53,20 @@ public class ScoringSystem : MonoBehaviour
                 //Total Happiness
                 //new     =   old 
                 happiness = happiness * 90 / 100;
+                timesUnbalance = 0;
 
             }
             final_score = score_progress;
             final_happiness = happiness;
-        }
+
+        GameData.Instance.last_score = final_score;
+        GameData.Instance.new_happiness = final_happiness;
+    }
 
         void Update()
         {
 
-            GameData.Instance.last_score = final_score;
-            GameData.Instance.new_happiness = final_happiness;
+
         }
     }
 

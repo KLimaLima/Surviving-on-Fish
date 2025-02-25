@@ -18,7 +18,7 @@ public class GameData : MonoBehaviour
 
     void Update()
     {
-        Debug.Log(amountGive);
+        Debug.Log(last_score);
     }
 
     //Add public variable above this comment

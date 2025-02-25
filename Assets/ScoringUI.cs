@@ -5,7 +5,6 @@ using UnityEngine;
 public class ScoringUI : MonoBehaviour
 {
     [SerializeField] private TMP_Text scoreUIText;
-    string scoreText;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -21,7 +20,7 @@ public class ScoringUI : MonoBehaviour
     void Scoring()
     {
         string scoreText = GameData.Instance.last_score.ToString();
-        string textUI = $"Score:\n{scoreText}";
+        string textUI = $"Total Score:\n{scoreText}";
         scoreUIText.text = textUI;
     }
 }
