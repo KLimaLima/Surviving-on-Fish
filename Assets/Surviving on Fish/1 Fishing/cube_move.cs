@@ -23,7 +23,7 @@ public class cube_move : MonoBehaviour
         moveTowards = new Vector3(0, 0, 0);
 
         areaToSpawn = WhereToStop.GetComponent<Collider>();
-        lowerLimit = areaToSpawn.bounds.min.x;
+        lowerLimit = areaToSpawn.bounds.min.y;
 
     }
 
