@@ -5,13 +5,13 @@ public class SardineUserController : MonoBehaviour {
 	SardineCharacter sardineCharacter;
 
 	void Start () {
-		sardineCharacter = GetComponent<SardineCharacter> ();
+		/*sardineCharacter = GetComponent<SardineCharacter> ();*/
 	}
 	
 
 	void Update () {
 
-		if (Input.GetKeyDown(KeyCode.K)) {
+/*		if (Input.GetKeyDown(KeyCode.K)) {
 			sardineCharacter.TurnRight();
 		}
 		if (Input.GetKeyDown(KeyCode.H)) {
@@ -28,12 +28,12 @@ public class SardineUserController : MonoBehaviour {
 		if (Input.GetKeyDown(KeyCode.U)) {
 			sardineCharacter.TurnUp();
 		}
+*/
 
-
-		float h = Input.GetAxis ("Horizontal");
+/*		float h = Input.GetAxis ("Horizontal");
 		float v = Input.GetAxis ("Vertical");
 		sardineCharacter.Move (v,h);
-
+*/
 
 	}
 }

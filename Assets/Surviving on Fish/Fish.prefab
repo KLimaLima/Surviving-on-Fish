@@ -899,8 +899,6 @@ GameObject:
   - component: {fileID: 1078914208960428662}
   - component: {fileID: 2491292139335859577}
   - component: {fileID: 1332856825217301643}
-  - component: {fileID: 4028099482968027475}
-  - component: {fileID: 4195269830646339590}
   - component: {fileID: 4713368398035176701}
   m_Layer: 0
   m_Name: Fish
@@ -975,33 +973,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 1
---- !u!114 &4028099482968027475
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4518378412248730217}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: be7d2c4c42318453db5bcb468a3d46f0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &4195269830646339590
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4518378412248730217}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6013d04ef25b3470e8526ea0bc443924, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  sardineAnimator: {fileID: 0}
-  turnSpeed: 0.1
-  forwardSpeed: 2
 --- !u!136 &4713368398035176701
 CapsuleCollider:
   m_ObjectHideFlags: 0
