@@ -256,8 +256,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5ba4e65c2f826e34e898185418230d54, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  DummyFishPrefab: {fileID: 4518378412248730217, guid: e2fa5d6fff4e64b4eb11bacb86196fd3, type: 3}
-  FishSpawnArea: {fileID: 2132763442}
+  dummyFishPrefab: {fileID: 4518378412248730217, guid: e2fa5d6fff4e64b4eb11bacb86196fd3, type: 3}
+  fishSpawnArea: {fileID: 2098392246}
 --- !u!4 &33353421
 Transform:
   m_ObjectHideFlags: 0
@@ -1234,6 +1234,7 @@ GameObject:
   - component: {fileID: 572124428}
   - component: {fileID: 572124427}
   - component: {fileID: 572124426}
+  - component: {fileID: 572124429}
   m_Layer: 0
   m_Name: Generate NPC
   m_TagString: Untagged
@@ -1284,6 +1285,24 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &572124429
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 572124425}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3a6b04fbe4292bb419568a090f2205fb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  npcPrefabs:
+  - {fileID: 7929040612236764608, guid: fcec08e1e6864074c83907d4b5594a60, type: 3}
+  - {fileID: 1787195187322207081, guid: 8ea6313e9b60f87468e60da4fdd781c6, type: 3}
+  - {fileID: 8059464406506282683, guid: 154495f7c61cd5940a0baa92f45044ac, type: 3}
+  - {fileID: 3287999801951082697, guid: 6080d944ddba26945a2a02208376b29a, type: 3}
+  spawnPoint: {fileID: 572124428}
 --- !u!1 &588342103
 GameObject:
   m_ObjectHideFlags: 0
@@ -1555,7 +1574,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 438b68b9412349e43a3198d040755436, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  amountFish: 0
+  amountFish: 10
   amountGive: 0
   fishCaughtObjects: []
   fishToGiveObjects: []

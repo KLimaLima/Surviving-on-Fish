@@ -11,7 +11,7 @@ public class random_give_me : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
     private int penaltyFactor = 2;
@@ -20,7 +20,7 @@ public class random_give_me : MonoBehaviour
     {
         int givenDiff = Mathf.Abs(GameData.Instance.amountGive - GameData.Instance.amountFishNeed);
 
-        float penaltyScore = Mathf.Pow(givenDiff , penaltyFactor );
+        float penaltyScore = Mathf.Pow(givenDiff, penaltyFactor);
 
         float calcScore = baseReward - penaltyScore;
 
@@ -35,7 +35,7 @@ public class random_give_me : MonoBehaviour
             Destroy(destroyMe);
         }
 
-        
+
         NewCustomer();
     }
 
