@@ -1,68 +1,33 @@
-using System.Collections.Generic;
 using UnityEngine;
 
-public class CaughtFishSpawner : MonoBehaviour
+public class FishSpawner : MonoBehaviour
 {
-    [SerializeField] private GameObject dummyFishPrefab;
-    [SerializeField] private Transform fishSpawnArea;
+    [SerializeField] private GameObject fishPrefab;  // 魚のPrefab
+    [SerializeField] private Transform bucketTransform; // 桶のTransform
+    [SerializeField] private float spawnHeightOffset = 1.0f; // 桶の上部よりどれくらい高い位置にスポーンするか
 
-    private List<GameObject> spawnedDummyFish = new List<GameObject>();
-    private int previousAmountFish;
-
-    void Start()
+    public void SpawnFish()
     {
-        previousAmountFish = GameData.Instance.amountFish;
-        UpdateDummyFish();
-    }
-
-    void Update()
-    {
-        // amountFish の値が変わった場合にのみ更新
-        if (GameData.Instance.amountFish != previousAmountFish)
+        if (fishPrefab == null || bucketTransform == null)
         {
-            UpdateDummyFish();
-            previousAmountFish = GameData.Instance.amountFish;
+            Debug.LogError("FishPrefab または BucketTransform が設定されていません！");
+            return;
         }
-    }
 
-    // DummyFish の生成または削除を行う
-    private void UpdateDummyFish()
-    {
-        int currentAmountFish = GameData.Instance.amountFish;
+        // 桶の上部の位置を計算
+        Vector3 spawnPosition = bucketTransform.position + new Vector3(0, spawnHeightOffset, 0);
 
-        // 生成
-        if (currentAmountFish > spawnedDummyFish.Count)
+        // 魚を生成
+        GameObject fish = Instantiate(fishPrefab, spawnPosition, Quaternion.identity);
+
+        // 魚にRigidbodyがない場合は追加
+        Rigidbody fishRb = fish.GetComponent<Rigidbody>();
+        if (fishRb == null)
         {
-            int fishToSpawn = currentAmountFish - spawnedDummyFish.Count;
-            for (int i = 0; i < fishToSpawn; i++)
-            {
-                GameObject newFish = Instantiate(dummyFishPrefab, GetRandomPosition(), Quaternion.identity, fishSpawnArea);
-                spawnedDummyFish.Add(newFish);
-            }
+            fishRb = fish.AddComponent<Rigidbody>();
         }
-        // 削除
-        else if (currentAmountFish < spawnedDummyFish.Count)
-        {
-            int fishToRemove = spawnedDummyFish.Count - currentAmountFish;
-            for (int i = 0; i < fishToRemove; i++)
-            {
-                GameObject fishToDelete = spawnedDummyFish[spawnedDummyFish.Count - 1];
-                spawnedDummyFish.RemoveAt(spawnedDummyFish.Count - 1);
-                Destroy(fishToDelete);
-            }
-        }
-    }
 
-    // スポーンエリア内のランダムな位置を取得
-    private Vector3 GetRandomPosition()
-    {
-        Vector3 areaSize = fishSpawnArea.localScale;
-        Vector3 areaPosition = fishSpawnArea.position;
-
-        float randomX = Random.Range(areaPosition.x - areaSize.x / 2, areaPosition.x + areaSize.x / 2);
-        float randomY = areaPosition.y;
-        float randomZ = Random.Range(areaPosition.z - areaSize.z / 2, areaPosition.z + areaSize.z / 2);
-
-        return new Vector3(randomX, randomY, randomZ);
+        fishRb.useGravity = true;  // 重力を有効にする
+        fishRb.mass = 0.5f;  // 落下の挙動を調整
     }
 }
